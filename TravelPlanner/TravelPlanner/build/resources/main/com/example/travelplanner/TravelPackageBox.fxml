@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.event.EventHandler?>
+<?import javafx.geometry.Insets?>
+<VBox prefHeight="494.0" prefWidth="430.0" spacing="10" style="-fx-border-color: black; -fx-border-width: 1;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.travelplanner.TravelPackageBoxController">
+    <VBox id="packageBox" fx:id="packageBox" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" prefHeight="500.0" prefWidth="349.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000; -fx-border-width: 2px; -fx-padding: 10px;">
+        <HBox prefHeight="22.0" prefWidth="212.0" spacing="10">
+            <Label fx:id="packageName" prefHeight="22.0" prefWidth="201.0" text="STATIC TEXT" textFill="#a81e1e">
+            <font>
+               <Font name="Garamond Bold" size="18.0" />
+            </font></Label>
+           <HBox prefHeight="18.0" prefWidth="254.0">
+               <Label fx:id="destination" prefHeight="22.0" prefWidth="226.0" text="STATIC TEXT">
+               <font>
+                   <Font name="Georgia Bold Italic" size="14.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.8030303463791356" endY="1.0" startX="0.47727278461962036" startY="0.2840909181219159">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.6421052813529968" green="0.1212865486741066" blue="0.1907290518283844" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6631578803062439" green="0.1178947389125824" blue="0.1178947389125824" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+           </HBox>
+        </HBox>
+        <HBox prefHeight="76.0" prefWidth="407.0">
+            <Label fx:id="packageDescription" prefHeight="85.0" prefWidth="407.0" text="STATIC TEXT" textFill="#2f18b1">
+                <font>
+                    <Font name="Garamond Bold" size="18.0" />
+                </font></Label>
+        </HBox>
+        <HBox>
+
+        </HBox>
+        <HBox>
+            <Label text="Duration: ">
+                <font>
+                    <Font name="Georgia Bold" size="12.0" />
+                </font></Label>
+            <Label fx:id="duration" prefHeight="18.0" prefWidth="171.0" text="Static Text">
+                <font><Font name="Georgia" /></font></Label>
+        </HBox>
+        <HBox>
+            <Label text="Price: ">
+                <font>
+                    <Font name="Georgia Bold" size="12.0" />
+                </font></Label>
+            <Label fx:id="price" prefHeight="18.0" prefWidth="196.0" text="Static Text">
+                <font><Font name="Georgia" /></font></Label>
+        </HBox>
+        <HBox prefHeight="34.0" prefWidth="407.0">
+            <Label prefHeight="35.0" prefWidth="74.0" text="Inclusions: ">
+                <font>
+                    <Font name="Georgia Bold" size="12.0" />
+                </font></Label>
+            <Label fx:id="inclusions" prefHeight="38.0" prefWidth="324.0" text="Static Text">
+                <font><Font name="Georgia" /></font></Label>
+        </HBox>
+        <HBox prefHeight="32.0" prefWidth="405.0">
+            <Label prefHeight="28.0" prefWidth="74.0" text="Exclusions: ">
+                <font>
+                    <Font name="Georgia Bold" size="12.0" />
+                </font></Label>
+            <Label fx:id="exclusions" prefHeight="34.0" prefWidth="312.0" text="Static Text">
+                <font><Font name="Georgia" /></font></Label>
+        </HBox>
+        <HBox prefHeight="18.0" prefWidth="212.0">
+            <Label prefHeight="15.0" prefWidth="71.0" text="Start Date: ">
+                <font>
+                    <Font name="Georgia Bold" size="12.0" />
+                </font></Label>
+            <Label fx:id="startDate" prefHeight="18.0" prefWidth="120.0" text="Static Text">
+                <font><Font name="Georgia" /></font></Label>
+            <Label prefHeight="15.0" prefWidth="66.0" text="End Date: ">
+                <font>
+                    <Font name="Georgia Bold" size="12.0" />
+                </font></Label>
+            <Label fx:id="endDate" prefHeight="18.0" prefWidth="130.0" text="Static Text">
+                <font><Font name="Georgia" /></font></Label>
+        </HBox>
+        <HBox />
+        <HBox prefHeight="18.0" prefWidth="213.0">
+            <Label text="Available Seats: ">
+                <font>
+                    <Font name="Georgia Bold" size="12.0" />
+                </font></Label>
+            <Label fx:id="availableSeats" prefHeight="18.0" prefWidth="86.0" text="Static Text">
+                <font><Font name="Georgia" /></font></Label>
+            <Label prefHeight="15.0" prefWidth="103.0" text="Average Rating: ">
+                <font>
+                    <Font name="Georgia Bold" size="12.0" />
+                </font></Label>
+            <Label fx:id="averageRating" prefHeight="18.0" prefWidth="97.0" text="Static Text">
+                <font><Font name="Georgia" /></font></Label>
+        </HBox>
+        <HBox />
+
+        <ImageView fx:id="packageImage" fitHeight="182.0" fitWidth="407.0" />
+
+        <HBox prefHeight="32.0" prefWidth="405.0">
+            <Button onAction="#addToCart" style="-fx-background-color: transparent; -fx-border-width: 0;">
+                <graphic>
+                    <ImageView>
+                        <image>
+                            <Image url="/com/example/travelplanner/cart.png" />
+                        </image>
+                        <fitWidth>40.0</fitWidth>
+                        <fitHeight>40.0</fitHeight>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button onAction="#removeFromCart" id="removeFromCartButton" fx:id="removeFromCartButton" visible="false" style="-fx-background-color: transparent; -fx-border-width: 0;">
+                <graphic>
+                    <ImageView>
+                        <image>
+                            <Image url="/com/example/travelplanner/delete.png" />
+                        </image>
+                        <fitWidth>40.0</fitWidth>
+                        <fitHeight>40.0</fitHeight>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </HBox>
+        <HBox>
+            <Label prefHeight="15.0" prefWidth="95.0" text="Rating: ">
+                <font>
+                    <Font name="Georgia Bold" size="12.0" />
+                </font></Label>
+            <Label fx:id="starRating" />
+        </HBox>
+        <HBox>
+            <StackPane>
+                <padding>
+                    <Insets top="8" right="20" bottom="10" left="20" />
+                </padding>
+                <ImageView>
+                    <image>
+                        <Image url="/com/example/travelplanner/envelope.png" />
+                    </image>
+                    <fitWidth>28.0</fitWidth>
+                    <fitHeight>28.0</fitHeight>
+                </ImageView>
+            </StackPane>
+            <Label fx:id="contactEmail" prefHeight="34.0" prefWidth="312.0" text="Static Text" textFill="blue">
+                <font><Font name="Georgia" /></font></Label>
+        </HBox>
+        <HBox>
+            <StackPane>
+                <padding>
+                    <Insets top="8" right="20" bottom="10" left="20" />
+                </padding>
+                <ImageView>
+                    <image>
+                        <Image url="/com/example/travelplanner/phone.png" />
+                    </image>
+                    <fitWidth>28.0</fitWidth>
+                    <fitHeight>28.0</fitHeight>
+                </ImageView>
+            </StackPane>
+            <Label fx:id="contactPhone" prefHeight="34.0" prefWidth="312.0" text="Static Text" textFill="blue">
+                <font><Font name="Georgia" /></font></Label>
+        </HBox>
+    </VBox>
+</VBox>

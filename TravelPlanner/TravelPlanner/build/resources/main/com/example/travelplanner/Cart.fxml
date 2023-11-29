@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.travelplanner.CartController">
+    <Button layoutX="20.0" layoutY="17.0" onAction="#goBackToDashboard" prefHeight="40.0" prefWidth="65.0" text="Back" />
+    <Label id="emptyCartLabel" fx:id="emptyCartLabel" prefHeight="88.0" prefWidth="446.0" text="YOUR CART IS EMPTY !!!" visible="false">
+      <font>
+         <Font name="Georgia Bold" size="24.0" />
+      </font></Label>
+    <HBox>
+        <!-- Use a GridPane to arrange the package boxes in a grid -->
+        <ScrollPane fx:id="scrollPane" prefHeight="800" prefWidth="1500">
+            <GridPane id="cartContent" fx:id="cartContent" alignment="TOP_LEFT" hgap="10" vgap="10">
+                <!-- Add squares for travel packages here -->
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="33.33" />
+                    <ColumnConstraints percentWidth="33.33" />
+                    <ColumnConstraints percentWidth="33.33" />
+                </columnConstraints>
+            </GridPane>
+        </ScrollPane>
+        <!-- Vertical Slider for scrolling on the right -->
+        <Slider fx:id="scrollSlider" orientation="VERTICAL" prefHeight="800" />
+    </HBox>
+</VBox>
