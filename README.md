@@ -1,4 +1,4 @@
-# Travel-Planner
+# Travel-Planner - VOYAGE VISION
 - The Travel Planner Project is an java based application designed to aid users in planning their trips.
 - It provides features such as searching for destinations, displaying maps, weather information, and presenting available tourist packages based on the user's entered location.
 - Additionally, the system offers functionalities to view details of travel packages, including descriptions, durations, prices, inclusions, and ratings.
