@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.travelplanner.LoginController">
+    <ImageView fitHeight="1080.0" fitWidth="1920.0" layoutX="-2.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="false">
+        <image>
+            <Image url="@dashboard-bg.jpg" />
+        </image>
+    </ImageView>
+    <HBox id="dashboard" alignment="CENTER" layoutX="-244.0" layoutY="14.0" prefHeight="1080.0" prefWidth="1800.0" spacing="20" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+        <!-- Space filler to push the buttons to the center -->
+        <Pane VBox.vgrow="ALWAYS">
+            <children>
+                <Label id="label_login" fx:id="label_login" layoutX="669.0" layoutY="42.0" prefHeight="91.0" prefWidth="531.0" style="-fx-text-fill: Lavender;">
+                    <font>
+                        <Font name="Times New Roman Bold" size="36.0" />
+                    </font>
+                </Label>
+                <Button layoutX="39.0" layoutY="332.0" maxHeight="259.0" maxWidth="283.0" minHeight="200.0" minWidth="200.0" onAction="#openTripPlanningPage" prefHeight="231.0" prefWidth="245.0" style="
+                    -fx-background-color: #6967ba;
+                    -fx-border-radius: 100px;
+                    -fx-text-fill: white;
+                    -fx-effect: innershadow( three-pass-box, #3d3ab4, 10, 0, 2, 2), outershadow(three-pass-box, #8c89eb, 10, 0, 5, 5);
+                " text="Plan a trip">
+                    <font>
+                        <Font name="Times New Roman Bold" size="18.0" />
+                    </font>
+                </Button>
+                <Button layoutX="312.0" layoutY="332.0" maxHeight="259.0" maxWidth="283.0" minHeight="200.0" minWidth="200.0" prefHeight="231.0" prefWidth="245.0" onAction="#openTripPackagePage" style="
+                    -fx-background-color: #6967ba;
+                    -fx-border-radius: 100px;
+                    -fx-text-fill: white;
+                    -fx-effect: innershadow( three-pass-box, #3d3ab4, 10, 0, 2, 2), outershadow(three-pass-box, #8c89eb, 10, 0, 5, 5);
+                " text="View Packages">
+                    <font>
+                        <Font name="Times New Roman Bold" size="18.0" />
+                    </font>
+                </Button>
+                <Button layoutX="576.0" layoutY="332.0" maxHeight="259.0" maxWidth="283.0" minHeight="200.0" minWidth="200.0" prefHeight="231.0" prefWidth="245.0" onAction="#openCartPage" style="
+                    -fx-background-color: #6967ba;
+                    -fx-border-radius: 100px;
+                    -fx-text-fill: white;
+                    -fx-effect: innershadow( three-pass-box, #3d3ab4, 10, 0, 2, 2), outershadow(three-pass-box, #8c89eb, 10, 0, 5, 5);
+                " text="My Cart">
+                    <font>
+                        <Font name="Times New Roman Bold" size="18.0" />
+                    </font>
+                </Button>
+                <Button id="logoutButton" fx:id="logoutButton" layoutX="858.0" layoutY="332.0" maxHeight="259.0" maxWidth="283.0" minHeight="200.0" minWidth="200.0" prefHeight="231.0" prefWidth="245.0" onAction="#onLogout" style="
+                    -fx-background-color: #6967ba;
+                    -fx-border-radius: 100px;
+                    -fx-text-fill: white;
+                    -fx-effect: innershadow( three-pass-box, #3d3ab4, 10, 0, 2, 2), outershadow(three-pass-box, #8c89eb, 10, 0, 5, 5);
+                " text="Logout">
+                    <font>
+                        <Font name="Times New Roman Bold" size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+    </HBox>
+</AnchorPane>

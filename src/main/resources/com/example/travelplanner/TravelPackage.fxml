@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #ddbea9" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.travelplanner.TravelPackageController">
+    <VBox alignment="CENTER_LEFT" spacing="10">
+        <Button layoutX="25.0" onAction="#goBackToDashboard" prefHeight="42.0" prefWidth="99.0" style="-fx-background-color: #bcb8b1; -fx-text-fill: black; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 10px 20px; -fx-background-radius: 5px;" text="Back">
+            <effect>
+                <DropShadow color="#000000" radius="5" spread="0.2" />
+            </effect>
+        </Button>
+    </VBox>
+
+    <HBox>
+        <!-- Use a GridPane to arrange the package boxes in a grid -->
+        <ScrollPane fx:id="scrollPane" prefHeight="778.0" prefWidth="1502.0">
+            <GridPane id="packageGrid" fx:id="packageGrid" alignment="TOP_LEFT" hgap="10" style="-fx-background-color: #ddbea9" vgap="10">
+                <!-- Add squares for travel packages here -->
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="33.33" />
+                    <ColumnConstraints percentWidth="33.33" />
+                    <ColumnConstraints percentWidth="33.33" />
+                </columnConstraints>
+            </GridPane>
+        </ScrollPane>
+
+        <!-- Vertical Slider for scrolling on the right -->
+        <Slider fx:id="scrollSlider" orientation="VERTICAL" prefHeight="800" />
+    </HBox>
+</VBox>
