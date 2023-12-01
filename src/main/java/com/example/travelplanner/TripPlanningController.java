@@ -63,7 +63,7 @@ public class TripPlanningController implements Initializable {
 
     private List<TravelPackage> loadPackagesFromDatabase(String destination) {
         List<TravelPackage> packages = new ArrayList<>();
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/travel_planner", "root", "Hp@300703")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/travel_planner", "root", "abd@1234")) {
             String query = "SELECT * FROM package WHERE destination = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, destination);
