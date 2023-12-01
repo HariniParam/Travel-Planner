@@ -67,7 +67,7 @@ public class CartController implements Initializable {
         List<TravelPackage> packagesInCart = new ArrayList<>();
 
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/travel_planner", "root", "Hp@300703")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/travel_planner", "root", "abd@1234")) {
             String query = "SELECT p.* FROM package p INNER JOIN cart c ON p.package_id = c.package_id WHERE c.user_id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, userId);
@@ -141,7 +141,7 @@ public class CartController implements Initializable {
 
         int userId = UserSession.getInstance().getCurrentUserId();
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/travel_planner", "root", "Hp@300703")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/travel_planner", "root", "abd@1234")) {
             String deleteQuery = "DELETE FROM cart WHERE user_id = ? AND package_id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery);
             preparedStatement.setInt(1, userId);
