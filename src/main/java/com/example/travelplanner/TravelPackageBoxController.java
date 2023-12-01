@@ -108,7 +108,7 @@ public class TravelPackageBoxController {
         return starRatingLabel;
     }
     private boolean isPackageInCart(int userId, int packageId) {
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/travel_planner", "root", "Hp@300703")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/travel_planner", "root", "abd@1234")) {
             String query = "SELECT * FROM cart WHERE user_id = ? AND package_id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, userId);
@@ -136,7 +136,7 @@ public class TravelPackageBoxController {
             showAlert("Info", "Package Already in Cart", "This package is already in your cart.");
             return;
         }
-        try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/travel_planner", "root", "Hp@300703")){
+        try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/travel_planner", "root", "abd@1234")){
             String insertQuery = "INSERT INTO cart (user_id, package_id, quantity) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
             preparedStatement.setInt(1, userId);
