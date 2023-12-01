@@ -69,7 +69,7 @@ public class TravelPackageController implements Initializable{
 
     private List<TravelPackage> loadPackagesFromDatabase() {
         List<TravelPackage> packages = new ArrayList<>();
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/travel_planner", "root", "Hp@300703")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/travel_planner", "root", "abd@1234")) {
             String query = "SELECT * FROM package";
             try (PreparedStatement statement = connection.prepareStatement(query);
                  ResultSet resultSet = statement.executeQuery()) {
